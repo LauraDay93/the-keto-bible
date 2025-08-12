@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>859793381952-mn40g1836vqeok5utllhko2anumuk66p.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.859793381952-mn40g1836vqeok5utllhko2anumuk66p</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCIZJ1zW7Zigho7K717DjBrynVQGv5qwlY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>859793381952</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.tvh.lauraday</string>
+	<key>PROJECT_ID</key>
+	<string>the-vegan-hack</string>
+	<key>STORAGE_BUCKET</key>
+	<string>the-vegan-hack.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:859793381952:ios:b69e99ca0b07f3e2d91da5</string>
+	<key>DATABASE_URL</key>
+	<string>https://the-vegan-hack.firebaseio.com</string>
+</dict>
+</plist>

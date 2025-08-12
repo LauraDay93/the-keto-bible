@@ -1,0 +1,31 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '12.0'
+use_frameworks!
+
+target 'The Keto Hack' do
+
+pod 'SnapKit'
+pod 'lottie-ios'
+pod 'Hero'
+pod 'ViewAnimator'
+pod 'DefaultsKit'
+pod 'SwiftyJSON'
+pod 'Kingfisher'
+pod 'FirebaseFirestore'
+pod 'Reachability'
+pod 'FirebaseAuth'
+pod 'FirebaseAnalytics'
+pod 'FirebaseUI'
+pod 'SwiftMessages'
+pod 'ViewAnimator'
+pod 'Fuse'
+pod 'SwiftyStoreKit'
+pod 'GoogleSignIn'
+pod 'FacebookLogin'
+pod 'paper-onboarding'
+pod 'IHKeyboardAvoiding'
+pod 'SwiftRater'
+pod 'FAPanels'
+pod 'iProgressHUD', '~> 1.1.1'
+pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+end
