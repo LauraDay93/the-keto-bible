@@ -348,9 +348,9 @@ class DataManager: NSObject {
     func searchRecipes(searchTerm : String, searchBar : UISearchBar!, completion: (([RecipeItem]?) -> Void)?) {
         
         var results = [RecipeItem]()
-        if recipes  != nil {
-            for recipe in recipes! {
-                if recipe.title.contains(searchTerm) {
+        if let recipes = recipes {
+            for recipe in recipes {
+                if recipe.title.range(of: searchTerm, options: .caseInsensitive) != nil {
                     results.append(recipe)
                 }
             }
