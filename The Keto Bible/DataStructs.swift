@@ -38,7 +38,7 @@ struct RecipeItem: Codable {
 
 
 
-    init?(title : String, categories : [String]?, avoidances: [String]?, imageUrl: URL?, nutritional: Nutritional, cookingTime: Int, prepTime: Int, servings: Int, ingredID:  String?, steps: [String]?, instaHandle: String?, date: String, useWebsite: Bool?, websiteLink: String?, whiteText: Bool?, isPro: Bool?) {
+    init(title : String, categories : [String]?, avoidances: [String]?, imageUrl: URL?, nutritional: Nutritional, cookingTime: Int, prepTime: Int, servings: Int, ingredID:  String?, steps: [String]?, instaHandle: String?, date: String, useWebsite: Bool?, websiteLink: String?, whiteText: Bool?, isPro: Bool?) {
         self.title = title
         self.imageUrl = imageUrl
         self.categories = categories
@@ -76,7 +76,7 @@ struct Nutritional: Codable {
     let cholesterol: Double
     
     
-    init?(carbs : Double, netCarbs: Double, calories : Double, protein: Double, fat: Double, satFat: Double, fibre: Double, sodium: Double, cholesterol: Double) {
+    init(carbs : Double, netCarbs: Double, calories : Double, protein: Double, fat: Double, satFat: Double, fibre: Double, sodium: Double, cholesterol: Double) {
         self.carbs = carbs
         self.netCarbs = netCarbs
         self.calories = calories
