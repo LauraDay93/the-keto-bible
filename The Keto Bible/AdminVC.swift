@@ -11,6 +11,7 @@ import UIKit
 import Spring
 import Firebase
 import FirebaseFirestore
+import SnapKit
 
 
 class AdminVC : UIViewController, UIScrollViewDelegate {

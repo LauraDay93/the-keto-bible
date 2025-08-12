@@ -11,6 +11,7 @@ import UIKit
 import Spring
 import SwiftMessages
 import FirebaseAuth
+import SnapKit
 
 class SettingsVC : UIViewController  {
 

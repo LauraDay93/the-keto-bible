@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import paper_onboarding
 import Spring
+import SnapKit
 
 
 class FeaturesOnboardingVC: UIViewController, PaperOnboardingDataSource {

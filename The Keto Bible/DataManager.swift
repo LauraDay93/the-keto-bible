@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import DefaultsKit
-import Reachability
+
 import Firebase
 import FirebaseAuth
 import Fuse
@@ -64,8 +64,8 @@ class DataManager: NSObject {
     
 
     /* REACHABILITY */
-    let reachability = Reachability.forInternetConnection()!
-    var internetConnection = false
+    /* Reachability removed; using NetworkMonitor */
+    var internetConnection = NetworkMonitor.shared.isConnected
 
     private var searchBarText : String?
 
@@ -436,7 +436,7 @@ class DataManager: NSObject {
     
     func loadAllRecipesFromFirebase(completion: (([RecipeItem] ) -> Void)?) {
         
-        if UserManager.shared.getWifiSync() && !reachability.isReachableViaWiFi() {
+        if UserManager.shared.getWifiSync() && !NetworkMonitor.shared.isOnWifi {
             return
         }
         
@@ -481,20 +481,22 @@ class DataManager: NSObject {
     }
     
     func initalizeReachabilityListener() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.reachabilityChanged),name:NSNotification.Name.reachabilityChanged,object: reachability)
-        reachability.startNotifier()
+    // Switched to NWPathMonitor
+    NetworkMonitor.shared.onStatusChange = { [weak self] connected in
+        guard let self = self else { return }
+        self.internetConnection = connected
+        NotificationCenter.default.post(name: DataManager.ReachabilityChanged, object: nil)
     }
+    NetworkMonitor.shared.start()
+}
+
     
     
     @objc func reachabilityChanged(note: NSNotification) {
-        let reachability = note.object as! Reachability
-        
-        if reachability.isReachable() {
-            internetConnection = true
-            NotificationCenter.default.post(name: DataManager.ReachabilityChanged, object: nil)
-            if reachability.isReachableViaWiFi() {
-                print("Reachable via WiFi")
-            } else {
+    // Deprecated; NWPathMonitor handles status updates.
+    internetConnection = NetworkMonitor.shared.isConnected
+}
+ else {
                 print("Reachable via Cellular")
             }
         } else {
@@ -504,13 +506,10 @@ class DataManager: NSObject {
     }
     
     func setupReachability() {
-        
-        self.internetConnection = reachability.isReachable()
-        
-        reachability.reachableBlock = { (reachability) in
-            if reachability!.isReachable() {
-                self.internetConnection = true
-            } else {
+    // Deprecated; kept for backward compatibility. Use initalizeReachabilityListener().
+    initalizeReachabilityListener()
+}
+ else {
                 self.internetConnection = false
             }
         }

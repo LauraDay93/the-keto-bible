@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Spring
+import SnapKit
 
 class FastingVC : UIViewController, UIScrollViewDelegate  {
     

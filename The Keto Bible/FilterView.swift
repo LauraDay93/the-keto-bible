@@ -12,7 +12,7 @@ import SnapKit
 import Spring
 
 
-protocol FiltersViewDelegate: class {
+protocol FiltersViewDelegate: AnyObject {
     func resetPressed();
     func searchPressed(filteredRecipes: [RecipeItem]?);
 

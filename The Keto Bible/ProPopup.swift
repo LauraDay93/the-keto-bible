@@ -10,9 +10,10 @@ import Foundation
 import UIKit
 import Spring
 import SwiftMessages
+import SnapKit
 
 
-@objc protocol ProPopupDelegate: class {
+@objc protocol ProPopupDelegate: AnyObject {
     func annualContinuePressed()
     func monthlyContinuePressed()
     func closePressed()

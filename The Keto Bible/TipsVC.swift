@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Spring
+import SnapKit
 
 class TipsVC : UIViewController, UIScrollViewDelegate  {
     

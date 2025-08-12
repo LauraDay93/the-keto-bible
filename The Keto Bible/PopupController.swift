@@ -8,12 +8,16 @@
 
 import Foundation
 import UIKit
+import SnapKit
 
 class PopupController: NSObject {
     
     static func showPopup(_ popup: UIView) {
         
-        let window: UIWindow? = (UIApplication.shared.windows[0])
+        let window: UIWindow? = UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .flatMap { $0.windows }
+            .first { $0.isKeyWindow }
         window?.addSubview(popup)
         
         popup.snp.makeConstraints{ (make) in

@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import Spring
+import SnapKit
+import Kingfisher
 
 class SearchRecipeCell : UICollectionViewCell {
 

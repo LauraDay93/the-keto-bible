@@ -1,31 +1,42 @@
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '12.0'
-use_frameworks!
+# Updated for Xcode 15+ / Swift 5.9+
+platform :ios, '14.0'
+inhibit_all_warnings!
+use_frameworks! :linkage => :dynamic
 
-target 'The Keto Hack' do
+target 'The Keto Bible' do
+  # UI & Layout
+  pod 'SnapKit'
+  pod 'Kingfisher'
+  pod 'Lottie'           # (was lottie-ios)
 
-pod 'SnapKit'
-pod 'lottie-ios'
-pod 'Hero'
-pod 'ViewAnimator'
-pod 'DefaultsKit'
-pod 'SwiftyJSON'
-pod 'Kingfisher'
-pod 'FirebaseFirestore'
-pod 'Reachability'
-pod 'FirebaseAuth'
-pod 'FirebaseAnalytics'
-pod 'FirebaseUI'
-pod 'SwiftMessages'
-pod 'ViewAnimator'
-pod 'Fuse'
-pod 'SwiftyStoreKit'
-pod 'GoogleSignIn'
-pod 'FacebookLogin'
-pod 'paper-onboarding'
-pod 'IHKeyboardAvoiding'
-pod 'SwiftRater'
-pod 'FAPanels'
-pod 'iProgressHUD', '~> 1.1.1'
-pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+  # Firebase
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Analytics'  # remove if not needed
+
+  # UX & Animations
+  pod 'SwiftMessages'
+  pod 'ViewAnimator'
+  pod 'Hero'
+
+  # Utilities
+  pod 'DefaultsKit'
+  pod 'SwiftyJSON'
+  pod 'FAPanels'
+
+  # IAP
+  pod 'SwiftyStoreKit'
+
+  # Login SDKs
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'GoogleSignIn'
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |t|
+    t.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
+    end
+  end
 end

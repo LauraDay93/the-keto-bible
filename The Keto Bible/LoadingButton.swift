@@ -15,8 +15,9 @@ extension SpringButton {
         if show {
             self.isEnabled = false
             self.alpha = 0.5
-            let indicator = UIActivityIndicatorView()
-            indicator.color = .white
+            let indicator = UIActivityIndicatorView(style: .medium)
+            indicator.hidesWhenStopped = true
+indicator.color = .white
             let buttonHeight = self.bounds.size.height
             let buttonWidth = self.bounds.size.width
             indicator.center = CGPoint(x: buttonWidth/2, y: buttonHeight/2)

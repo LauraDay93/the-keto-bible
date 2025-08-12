@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import SnapKit
+import Kingfisher
 
 class IngredientShoppingCell : UICollectionViewCell {
 

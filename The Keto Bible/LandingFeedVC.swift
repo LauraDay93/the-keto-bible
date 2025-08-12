@@ -15,6 +15,7 @@ import SwiftMessages
 import Hero
 import SwiftRater
 import iProgressHUD
+import SnapKit
 
 class LandingFeedVC : UIViewController,  UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, FiltersViewDelegate, UISearchBarDelegate {
     

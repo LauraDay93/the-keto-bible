@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SnapKit
 
 
 class ShoppingListRecipeCell : UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
